@@ -26,8 +26,21 @@ services:
       - .:/app
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GITHUB_ACCESS_TOKEN: ${GITHUB_TOKEN}
+      # Git Configuration
+      GIT_USER_NAME: ${GIT_USER_NAME:-admin-gulpanzer}
+      GIT_USER_EMAIL: ${GIT_USER_EMAIL:-admin@gulpanzer.xyz}
       # AGNO_MONITOR: "True"
       # AGNO_API_KEY: ${AGNO_API_KEY}
+      # Pinecone Configuration
+      PINECONE_API_KEY: ${PINECONE_API_KEY}
+      PINECONE_ENVIRONMENT: ${PINECONE_ENVIRONMENT}
+      PINECONE_INDEX_NAME: ${PINECONE_INDEX_NAME:-codebase-index-v2}
+      # Relace.ai Configuration
+      RELACE_API_KEY: ${RELACE_API_KEY}
+      RELACE_EMBEDDINGS_URL: ${RELACE_EMBEDDINGS_URL:-https://embeddings.endpoint.relace.run/v1}
+      RELACE_RERANKER_URL: ${RELACE_RERANKER_URL:-https://ranker.endpoint.relace.run/v2}
+      RELACE_INSTANT_APPLY_URL: ${RELACE_INSTANT_APPLY_URL:-https://instantapply.endpoint.relace.run/v1}
       DB_HOST: pgvector
       DB_PORT: 5432
       DB_USER: ${DB_USER:-ai}

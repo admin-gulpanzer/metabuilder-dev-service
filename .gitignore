@@ -29,3 +29,8 @@ dist
 # ignore virtualenvs
 .venv*
 venv*
+
+# ignore local dir
+.local
+
+test_*.py

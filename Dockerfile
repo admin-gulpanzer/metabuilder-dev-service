@@ -10,6 +10,9 @@ RUN groupadd -g 61000 ${USER} \
 
 WORKDIR ${APP_DIR}
 
+# Install Git
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+
 # Copy requirements.txt
 COPY requirements.txt ./
 
